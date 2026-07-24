@@ -1,3 +1,9 @@
+## Screenshots
+
+![Home Screen](./fastlane/metadata/android/en-US/phoneScreenshots/1_home_json.jpg)
+![Terminal Workspace](./fastlane/metadata/android/en-US/phoneScreenshots/3_terminal.jpg)
+![App Drawer](./fastlane/metadata/android/en-US/phoneScreenshots/2_appdrawer.jpg)
+
 # focus.js
 
 Focus.js replaces your standard launcher with a minimal, code-editor aesthetic paired with an working terminal.
