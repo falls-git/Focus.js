@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Backgrounds & Structural UI -->
+    <color name="ide_background">#1E1E2E</color>  <!-- Catppuccin Macchiato Dark -->
+    <color name="line_number">#45475A</color>     <!-- Muted line gutter -->
+    <color name="punctuation">#89B4FA</color>     <!-- Soft Blue for Brackets/Braces -->
+
+    <!-- Syntax Colors -->
+    <color name="json_key">#F38BA8</color>        <!-- Soft Red/Pink for Keys -->
+    <color name="js_keyword">#CBA6F7</color>      <!-- Mauve/Purple for Functions -->
+    <color name="app_string">#A6E3A1</color>      <!-- Soft Green for Strings -->
+    <color name="comment">#6C7086</color>         <!-- Muted Gray for Comments -->
+</resources>
