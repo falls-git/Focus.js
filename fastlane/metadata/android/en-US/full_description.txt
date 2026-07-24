@@ -1,0 +1,10 @@
+Focus.js is a minimalist, terminal-inspired Android launcher designed specifically for developers and power users seeking a distraction-free digital experience.
+
+Key Features:
+
+• JSON-Style Home Screen: Replaces traditional app icons with a live, syntax-highlighted JSON object displaying real-time system status and your essential pinned applications.
+• Integrated Terminal Workspace: Features a built-in terminal interface for executing shell commands, browsing local directories, and managing files directly from your launcher.
+• Dynamic App Pinning: Effortlessly pin or unpin your favorite apps to customize your home screen layout on the fly.
+• Searchable App Drawer: Access your entire library of installed applications through a clean, distraction-free categorized app drawer.
+• Monospace Developer Aesthetic: Built with sleek typography and customizable developer-oriented color themes.
+• Fast & Lightweight: Engineered in Kotlin with Coroutines to deliver ultra-fast performance, instant launch times, and minimal battery overhead without tracking or telemetry.
