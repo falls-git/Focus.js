@@ -1,5 +1,6 @@
 ## Screenshots
-![Uploading photo_2026-07-24_21-02-02.jpg…]()
+<img width="2560" height="1773" alt="photo_2026-07-24_21-02-02" src="https://github.com/user-attachments/assets/4419439f-c8ee-409e-a360-8498cf375fb1" />
+
 
 
 # focus.js
