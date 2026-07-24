@@ -1,8 +1,6 @@
 ## Screenshots
+![Uploading photo_2026-07-24_21-02-02.jpg…]()
 
-![Home Screen](./fastlane/metadata/android/en-US/phoneScreenshots/1_home_json.jpg)
-![Terminal Workspace](./fastlane/metadata/android/en-US/phoneScreenshots/3_terminal.jpg)
-![App Drawer](./fastlane/metadata/android/en-US/phoneScreenshots/2_app_drawer.jpg)
 
 # focus.js
 
