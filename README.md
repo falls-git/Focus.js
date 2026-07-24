@@ -1,15 +1,12 @@
 ## Screenshots
-<img width="2560" height="1773" alt="photo_2026-07-24_21-02-02" src="https://github.com/user-attachments/assets/4419439f-c8ee-409e-a360-8498cf375fb1" />
-
-
+<img width="2560" height="1317" alt="photo_2026-07-24_22-10-14" src="https://github.com/user-attachments/assets/e73a5325-1870-427e-824b-af4b190c2963" />
 
 # focus.js
 
 Focus.js replaces your standard launcher with a minimal, code-editor aesthetic paired with an working terminal.
 
-Incase you want the coding vibe. Give this a try
+Incase you want a distraction free launcher and some coding vibes, Give this a try
 
----
 
 ## What it does
 
