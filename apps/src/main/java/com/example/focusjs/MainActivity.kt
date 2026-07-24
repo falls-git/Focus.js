@@ -31,10 +31,15 @@ import android.os.Build
 import android.view.WindowInsetsController
 import java.io.File
 import android.net.Uri
+import android.os.IBinder
 import android.provider.Settings
+import android.content.Context
+import android.view.inputmethod.InputMethodManager
 class MainActivity : AppCompatActivity() {
     private var isTerminalFullscreen = false
     private var currentDir: File = Environment.getExternalStorageDirectory()
+
+    private lateinit var matrixView: MatrixRainView
     private lateinit var statusManager: StatusWidgetManager
     private lateinit var appManager: AppManager
     private lateinit var pinnedAppsManager: PinnedAppsManager
@@ -57,16 +62,22 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         checkStoragePermission()
 
+        matrixView = findViewById(R.id.matrixView) // <-- ADD THIS
+        btnToggleTerminal = findViewById(R.id.btnToggleTerminal)
+        editorContainer = findViewById(R.id.editorContainer)
+
+
         onBackPressedDispatcher.addCallback(this, object : OnBackPressedCallback(true) {
             override fun handleOnBackPressed() {
-                if (isTerminalFullscreen) {
+                if (matrixView.isVisible) {
+                    matrixView.visibility = View.GONE
+                }
+                else if (isTerminalFullscreen) {
                     toggleTerminalFullscreen()
                 }
-                // Do nothing, or hide the terminal if it is currently open
                 else if (terminalContainer.isVisible) {
                     toggleTerminal()
                 }
-                // If terminal is already closed, doing nothing keeps user on home screen
             }
         })
 
@@ -381,15 +392,17 @@ class MainActivity : AppCompatActivity() {
             "clear" -> terminalOutput.text = ""
             "fullscreen", "toggle-fullscreen" -> toggleTerminalFullscreen()
             "pin", "unpin" -> handleAppPinningCommands(command, args)
+            "fmatrix", "focusmatrix" -> startMatrixEffect()
             "help" -> appendOutput(
                 "Commands:\n" +
                         "  cd / ls / cp / mv / rm (standard shell commands)" +
                         "  open <app_name>\n" +
-                        "  pin <app_name>\n" +
-                        "  unpin <app_name>\n" +
+                        "  pin/unpin <app_name>\n" +
                         "  fullscreen\n" +
+                        "  fmatrix/focusmatrix\n" +
                         "  clear"
             )
+
             "open" -> {
                 if (args.isEmpty()) {
                     appendOutput("Error: specify app name (e.g. 'open YouTube')")
@@ -410,6 +423,25 @@ class MainActivity : AppCompatActivity() {
             else -> runShellCommand(trimmed)
         }
     }
+    private fun startMatrixEffect() {
+        // Hide virtual soft keyboard
+        val imm = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+        imm.hideSoftInputFromWindow(terminalInput.windowToken, 0)
+
+        // Clear focus from EditText so it doesn't reopen keyboard automatically
+        terminalInput.clearFocus()
+
+        // Show high-density Matrix Rain
+        matrixView.visibility = View.VISIBLE
+
+        // Tap anywhere on screen to dismiss
+        matrixView.setOnClickListener {
+            matrixView.visibility = View.GONE
+        }
+    }
+
+    private fun hideSoftInputFromWindow(windowToken: IBinder, i: Int) {}
+
     private fun handleAppPinningCommands(command: String, args: List<String>) {
         if (args.isEmpty()) {
             appendOutput("Error: specify app name (e.g., '$command WhatsApp')")
