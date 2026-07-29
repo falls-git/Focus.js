@@ -1,1 +1,0 @@
-A distraction free launcher in coding format with a built in terminal.
